@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='ShoppingListApp'>
+<html ng-app='IndexApp'>
   <head>
     <meta charset="utf-8">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -11,13 +11,8 @@
   </head>
   <body>
     <h1>Fitbit:</h1>
-    <div ng-controller='ShoppingListController'>
-      <!-- Searchable Shopping List: -->
+    <div ng-controller='IndexController'>
       <button ng-click="authenticate()">Lets Authenticate!</button>
-      <input type="text" ng-model="search"/>
-      <ul>
-        <li ng-repeat="item in shoppingList | filter : search">{{ item }}</li>
-      </ul>
     </div>
   </body>
 </html>
