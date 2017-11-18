@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='LandingPageApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>google.charts.load('current', {'packages':['line']});</script>
+    <script src="angular.min.js"></script>
+    <script src="LandingPageApp.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <h1>Fitbit: Landing Page</h1>
+    <div ng-controller='LandingPageController'>
+      <button ng-click="process()">Fetch Data!</button>
+      <div id="chart"></div>
+    </div>
+  </body>
+</html>
