@@ -2,16 +2,27 @@
 'use strict';
 
 
-angular.module('LandingPageApp', [])
-.controller('LandingPageController', LandingPageController);
+angular.module('LandingPageApp', ['720kb.datepicker'])
+.controller('LandingPageController', LandingPageController)
+.controller('dateController', dateController);
+
+dateController.$inject = ['$scope'];
+function dateController($scope) {
+  // $scope.datePicker = function() {
+  //   $(function () {
+  //     $( "#datepicker" ).datepicker({
+  //       altField: "#datepicker",
+  //       altFormat: "yy-mm-dd",
+  //       showWeek: true,
+  //       firstDay: 1,
+  //      });
+  //    });
+  //  };
+}
 
 LandingPageController.$inject = ['$scope'];
 function LandingPageController($scope) {
-  $scope.baseDate = new Date();
-  $scope.baseDate = $scope.baseDate.getFullYear() + "-" + $scope.baseDate.getMonth() + "-" + $scope.baseDate.getDate()
-  $scope.endDate = new Date();
-  console.log($scope.endDate);
-  $scope.endDate = $scope.endDate.getFullYear() + "-" + $scope.endDate.getMonth() + "-" + $scope.endDate.getDate()
+
   // Make an API request and graph it
   var processResponse = function(res) {
       if (!res.ok) {
@@ -79,7 +90,6 @@ var graphDistances = function(summary) {
               .then(processSummary)
               .then(graphDistances);
   }
-
-  }
+}
 
 })();

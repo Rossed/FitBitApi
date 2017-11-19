@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- JavaScript -->
     <!-- Google graphing libraries -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>google.charts.load('current', {'packages':['line']});</script>
@@ -14,21 +15,60 @@
     <!-- Backing js -->
     <script src="js/LandingPageApp.js"></script>
 
+    <!-- CSS -->
+    <!-- Google API stylesheet -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/cupertino/jquery-ui.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- AngularJs Datepicker -->
+    <link rel="stylesheet" href="css/angular-datepicker.css"></script>
+    <!-- Backing CSS -->
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1>Fitbit: Landing Page</h1>
-    <div ng-controller='LandingPageController'>
-      <input ng-model="baseDate" type="text">
-      <input ng-model="endDate" type="text">
-      <button ng-click="process()">Fetch Data!</button>
-      <div id="chart"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <h1 style="text-align:center">Fitbit: Landing Page</h1>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div ng-controller='LandingPageController' class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="center-div">
+            <div style="margin-right:5px;">
+              <datepicker date-format="yyyy-M-dd">
+                <input ng-model="baseDate" type="text"/>
+              </datepicker>
+            </div>
+            <div style="margin-right:5px;">
+              <datepicker date-format="yyyy-M-dd">
+                <input ng-model="endDate" type="text"/>
+              </datepicker>
+            </div>
+            <div>
+              <button ng-click="process()" class="btn btn-info btn-sm">Fetch Data!</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+
+
+      <div class="row">
+        <div id="chart" class="col-12"></div>
+      </div>
     </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/angular-datepicker.js"></script>
   </body>
 </html>

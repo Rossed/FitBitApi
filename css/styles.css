@@ -1,0 +1,14 @@
+.container {
+  margin-top: 100px;
+}
+
+.center-div {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.btn-auth {
+  display: block;
+  margin: auto;
+}
