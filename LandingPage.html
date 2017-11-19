@@ -12,6 +12,8 @@
   <body>
     <h1>Fitbit: Landing Page</h1>
     <div ng-controller='LandingPageController'>
+      <input ng-model="baseDate" type="text">
+      <input ng-model="endDate" type="text">
       <button ng-click="process()">Fetch Data!</button>
       <div id="chart"></div>
     </div>

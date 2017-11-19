@@ -7,6 +7,11 @@ angular.module('LandingPageApp', [])
 
 LandingPageController.$inject = ['$scope'];
 function LandingPageController($scope) {
+  $scope.baseDate = new Date();
+  $scope.baseDate = $scope.baseDate.getFullYear() + "-" + $scope.baseDate.getMonth() + "-" + $scope.baseDate.getDate()
+  $scope.endDate = new Date();
+  console.log($scope.endDate);
+  $scope.endDate = $scope.endDate.getFullYear() + "-" + $scope.endDate.getMonth() + "-" + $scope.endDate.getDate()
   // Make an API request and graph it
   var processResponse = function(res) {
       if (!res.ok) {
@@ -59,19 +64,18 @@ var graphDistances = function(summary) {
 
   $scope.fitbitAccessToken = fragmentQueryParameters.access_token;
 
-  var fetchData = fetch (
-    'https://api.fitbit.com/1/user/-/activities/steps/date/2017-11-18/7d.json',
-    {
-        headers: new Headers({
-            'Authorization': 'Bearer ' + $scope.fitbitAccessToken
-        }),
-        mode: 'cors',
-        method: 'GET'
-    }
-  )
-
   $scope.process = function() {
-    fetchData.then(processResponse)
+    console.log($scope.timePeriod);
+    fetch (
+      'https://api.fitbit.com/1/user/-/activities/steps/date/' + $scope.baseDate + '/' + $scope.endDate + '.json',
+      {
+          headers: new Headers({
+              'Authorization': 'Bearer ' + $scope.fitbitAccessToken
+          }),
+          mode: 'cors',
+          method: 'GET'
+      }
+    ).then(processResponse)
               .then(processSummary)
               .then(graphDistances);
   }
