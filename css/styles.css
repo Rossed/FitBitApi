@@ -12,3 +12,8 @@
   display: block;
   margin: auto;
 }
+
+datepicker #endDate {
+  border-radius: 0px;
+  border-left: 0px;
+}

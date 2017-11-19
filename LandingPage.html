@@ -37,19 +37,19 @@
       <div ng-controller='LandingPageController' class="row">
         <div class="col-3"></div>
         <div class="col-6">
-          <div class="center-div">
-            <div style="margin-right:5px;">
+          <div class="input-group">
+            <div>
               <datepicker date-format="yyyy-M-dd">
-                <input ng-model="baseDate" type="text"/>
-              </datepicker>
-            </div>
-            <div style="margin-right:5px;">
-              <datepicker date-format="yyyy-M-dd">
-                <input ng-model="endDate" type="text"/>
+                <input id="baseDate" placeholder="start date" ng-model="baseDate" type="text" class="form-control" style="width:100%"/>
               </datepicker>
             </div>
             <div>
-              <button ng-click="process()" class="btn btn-info btn-sm">Fetch Data!</button>
+              <datepicker date-format="yyyy-M-dd">
+                <input id="endDate" placeholder="end date" ng-model="endDate" type="text" class="form-control" style="width:100%"/>
+              </datepicker>
+            </div>
+            <div class="input-group-btn">
+              <button ng-click="process()" class="btn btn-secondary">Fetch Data!</button>
             </div>
           </div>
         </div>
